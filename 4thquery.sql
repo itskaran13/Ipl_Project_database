@@ -1,0 +1,1 @@
+ select D.bowler, sum(D.total_runs -(D.bye_runs + D.legbye_runs))*6.0/count( Case when (noball_runs = 0 and wide_runs = 0) then 1 else null end) as Economy from deliveries D join matches M on D.match_id = M.id where season = 2015 group by D.bowler order by Economy asc;

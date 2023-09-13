@@ -1,0 +1,1 @@
+select  D.batting_team ,sum(D.extra_runs) as extra_runs from deliveries D join matches M on D.match_id = M.id where season= 2016 group by D.batting_team order by extra_runs asc;
